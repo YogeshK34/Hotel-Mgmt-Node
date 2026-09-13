@@ -48,3 +48,7 @@ room
 	booking is done and it will reflect the room bought by customer, so I can have a dedicated route that will show all the details for customer 
 	including books by his id   
 	
+
+# Now the only thing remaining is to do a couple things : 
+1. Wire up frontend and backend 
+2. Implement JWT-Auth for user login sessions

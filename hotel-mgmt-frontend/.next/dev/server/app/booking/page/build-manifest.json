@@ -1,0 +1,39 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/058n_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_0gfd52u._.js",
+    "static/chunks/058n_next_dist_compiled_next-devtools_index_1ie75ou.js",
+    "static/chunks/058n_next_dist_compiled_react-dom_036gi61._.js",
+    "static/chunks/058n_next_dist_compiled_react-server-dom-turbopack_0oz_ize._.js",
+    "static/chunks/058n_next_dist_compiled_0q4yg6l._.js",
+    "static/chunks/058n_next_dist_client_1jedfhx._.js",
+    "static/chunks/058n_next_dist_0b3xms7._.js",
+    "static/chunks/1kif_@swc_helpers_cjs_0q6ws7e._.js",
+    "static/chunks/hotel-mgmt-frontend_1anvha4._.js",
+    "static/chunks/turbopack-hotel-mgmt-frontend_0umgc03._.js"
+  ],
+  "pages": {},
+  "ampFirstPages": [],
+  "rootMainFilesTree": {
+    "/booking/page": [
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_0gfd52u._.js",
+      "static/chunks/058n_next_dist_compiled_next-devtools_index_1ie75ou.js",
+      "static/chunks/058n_next_dist_compiled_react-dom_036gi61._.js",
+      "static/chunks/058n_next_dist_compiled_react-server-dom-turbopack_0oz_ize._.js",
+      "static/chunks/058n_next_dist_compiled_0q4yg6l._.js",
+      "static/chunks/058n_next_dist_client_1jedfhx._.js",
+      "static/chunks/058n_next_dist_0b3xms7._.js",
+      "static/chunks/1kif_@swc_helpers_cjs_0q6ws7e._.js",
+      "static/chunks/hotel-mgmt-frontend_1anvha4._.js",
+      "static/chunks/turbopack-hotel-mgmt-frontend_0umgc03._.js",
+      "static/chunks/hotel-mgmt-frontend_148k4gt._.js"
+    ]
+  },
+  "pagesChunkGroupBootstrapParams": {},
+  "chunkLoadingGlobal": "TURBOPACK"
+}
