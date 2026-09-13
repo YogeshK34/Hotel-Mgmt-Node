@@ -1,0 +1,50 @@
+Game plan for Hotel Management System would be: 
+1. Rooms would be available for everyone (from start)
+2. Customers would select and book any of the rooms
+3. Purchasing would involve attaching room_id with cust_id, to reflect rooms booked
+4. After every purchase, backend would be refreshed to reflect available rooms & booked 
+room 
+
+
+# Backend 
+1. Express routes: would have routes to display all the rooms (available + booked)
+2. A booking route: that would attach room_id & cust_id & would add rooms in a booked_rooms db 
+3. A customer route: to show their currently booked / owned rooms 
+4. Dedicated endpoint that shows only available rooms (for new users)
+5. Endpoint to un-book the hotel room
+
+# Database 
+1. Would have tables like: { rooms_avail, rooms_booked, all_rooms } 
+	so basically a whole new DB for rooms & rooms_booked would have a 1 to 1 relationship 
+	with cust_id 
+2. Customer DB: would have cust_id, room_booked, room_id, cust_password
+
+# Frontend	
+1. Would have a login form and based on the customer's data, I can show him, room_booked & available room but he won't be able to book any of the room because I am restricting room_booking for singular per user 
+2. Once customer has unbooked the hotel room and then I can once again allow him to book any of the room 
+
+# Notes / additional-info 
+1. I am deliberately restricting or not adding booking with money here, because that adds a lot of complexity that I do not want here 
+2. Key Goal is still the same: in Node.js practical I am gonna encounter these exact things, so the things I have to practice for are : 
+	@ setting up DB perfectly in Windows using Docker 
+	@ writing correct routes (express) 
+	@ wiring frontend & backend together 
+	@ Nobody cares about UI, but I'll be using shadcn 
+
+# Start with setting up Postgres DB using Docker and connecting that to an Express backend & React frontend, that'll be the first task 
+
+# Database Tables: 
+1. There has to be 2 tables in HotelDB, one should be a room table & other would be a customer one
+	# room_table: so there's a confusion I am having right now about ID's it's about 2 different kinds of ID's, the first ID has to be the unique 
+	identifier, but not for display purpose for Database purpose, for identification, and for assigning with a customer_id, and the 2nd is needed
+	for display purpose, because Rooms do not have names (in-general) like they do have Names but commonly rooms are identified by ID's so this 
+	distinction I have to get right 
+
+	# room_table: would be a couple ID's & I'm guessing a field that would somehow tell is the room available or booked, or so initially all rooms 
+	would be available, but to show booked_room I can have a field, that when someone would book a specific room say 101, I'll add a relationship 
+	that is an cust_id in a column inside room_table that'll indicate the room has been taken 
+
+	# customer_table: add fields like ID, Name, Password, and room_taken, similar to above point, I can add the room_id in this field, once the 
+	booking is done and it will reflect the room bought by customer, so I can have a dedicated route that will show all the details for customer 
+	including books by his id   
+	
