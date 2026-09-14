@@ -142,6 +142,13 @@ app.post('/login', async (req, res) => {
     }
 })
 
+app.post('/logout', isAuthenticated, (req, res) => {
+    req.session.destroy((err) => {
+        if (err) return res.status(500).json({ error: 'Logout failed' })
+        res.status(200).json({ message: 'Logged out successfully' })
+    })
+})
+
 app.get('/customers', async (req, res) => {
     try {
         const query = await pool.query('SELECT * FROM customers');

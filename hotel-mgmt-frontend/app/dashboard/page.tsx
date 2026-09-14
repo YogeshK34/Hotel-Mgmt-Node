@@ -1,6 +1,8 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { Spinner } from "@/components/ui/spinner"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
@@ -14,6 +16,7 @@ interface Booking {
 export default function Dashboard() {
     const [loading, setLoading] = useState<boolean>(false)
     const [bookings, setBookings] = useState<Booking[]>([])
+    const router = useRouter();
 
     useEffect(() => {
         async function fetchBookings() {
@@ -39,6 +42,26 @@ export default function Dashboard() {
         }
         fetchBookings()
     }, [])
+
+    async function logout() {
+        try {
+            const res = await fetch('http://localhost:3001/logout', {
+                method: 'POST',
+                headers: { 'Content-type': 'application/json' },
+                credentials: 'include'
+            });
+
+            const data = await res.json();
+            if (!res.ok) return toast.error(data.error);
+
+            toast.success(data.message);
+            router.push('/login');
+
+        } catch (error: any) {
+            console.error(error);
+            return toast.error(error.message);
+        }
+    }
 
     return (
         <div className="min-h-screen bg-zinc-950 px-6 py-10">
@@ -92,6 +115,9 @@ export default function Dashboard() {
                         ))}
                     </div>
                 )}
+
+                <Button onClick={() => { router.push('/booking') }}>Book Rooms</Button>
+                <Button onClick={() => { logout() }}>Logout</Button>
             </div>
         </div>
     )

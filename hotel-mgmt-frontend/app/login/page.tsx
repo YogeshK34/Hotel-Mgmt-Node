@@ -88,7 +88,7 @@ export default function Login() {
 
                 <p className="text-zinc-600 text-sm text-center">
                     Don't have an account?{' '}
-                    <a href="/register" className="text-zinc-400 hover:text-white transition-colors">
+                    <a href="/" className="text-zinc-400 hover:text-white transition-colors">
                         Register
                     </a>
                 </p>

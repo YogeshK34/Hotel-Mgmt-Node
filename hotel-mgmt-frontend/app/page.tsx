@@ -91,9 +91,9 @@ export default function Register() {
           >
             {registering ? (
               <span className="flex items-center gap-2">
-                <Spinner /> Signing up...
+                <Spinner /> Signing in...
               </span>
-            ) : 'Sign up'}
+            ) : 'Sign in'}
           </Button>
         </div>
 
